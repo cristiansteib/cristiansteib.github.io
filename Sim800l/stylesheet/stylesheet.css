@@ -1,3 +1,7 @@
+/*******************************************************************************
+Theme Styles
+*******************************************************************************/
+
 body {
   box-sizing: border-box;
   color:#373737;
@@ -7,6 +11,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 700;
@@ -18,6 +23,32 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 36px;
   font-weight: 700;
+}
+
+h2 {
+  padding-bottom: 10px;
+  font-size: 32px;
+  background: url('../images/bg_hr.png') repeat-x bottom;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 21px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  margin: 10px 0 15px 0;
 }
 
 footer p {
@@ -41,55 +72,12 @@ a {
   -ms-transition: text-shadow 0.5s ease;
 }
 
-footer a:hover {
-  color: #43adff;
+#main_content a:hover {
+  color: #0069ba;
   text-shadow: #0090ff 0px 0px 2px;
 }
 
-
-/*******************************************************************************
-Full-Width Styles
-*******************************************************************************/
-.outer {
-  width: 100%;
-}
-
-.inner {
-  position: relative;
-  max-width: 640px;
-  padding: 20px 10px;
-  margin: 0 auto;
-}
-
-#header_wrap {
-  background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
-}
-
-#header_wrap .inner {
-  padding: 50px 10px 30px 10px;
-}
-
-
-#main_content_wrap {
-  background: #f2f2f2;
-  border-top: 1px solid #111;
-  border-bottom: 1px solid #111;
-}
-
-#project_title {
-  margin: 0;
-  color: #fff;
-  font-size: 42px;
-  font-weight: 700;
-  text-shadow: #111 0px 0px 10px;
-}
-
-
-#footer_wrap {
-  background: #212121;
+footer a:hover {
+  color: #43adff;
+  text-shadow: #0090ff 0px 0px 2px;
 }
