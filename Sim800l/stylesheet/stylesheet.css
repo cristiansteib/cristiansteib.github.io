@@ -365,6 +365,10 @@ Full-Width Styles
   padding-top: 40px;
 }
 
+#esp_italic {
+  font-style:italic;
+}
+
 #footer_wrap {
   background: #212121;
 }
