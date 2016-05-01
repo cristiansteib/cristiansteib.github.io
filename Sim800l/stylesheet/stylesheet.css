@@ -367,6 +367,7 @@ Full-Width Styles
 
 #esp_italic {
   font-style:italic;
+  color:grey;
 }
 
 #footer_wrap {
