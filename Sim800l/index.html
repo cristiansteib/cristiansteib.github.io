@@ -53,7 +53,8 @@
       <section id="main_content" class="inner">
     
             <div class="fb-like" data-href="https://cristiansteib.github.io/Sim800l/" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-          
+          </br>
+        </br>
         <h1>GSM Sim800l Arduino Library</h1> 
         <h5>This is a library for Arduino</h5>
 		<p>Copyright (c) 2016 Cristian Steib<br>
@@ -69,7 +70,58 @@
      	<h3>Website</h3>
 		<p>GitHub Page (<a href="http://cristiansteib.github.io/Sim800l/">http://cristiansteib.github.io/Sim800l/</a>)</p>
 		<p>GitHub (<a href="https://github.com/cristiansteib/Sim800l">https://github.com/cristiansteib/Sim800l</a>)</p>	
+        
+        
+        <h3>-How to send Sms with the library?</h3>
+          <pre style="boder:10px black;color:#4969a9">
+#include &lt;Sim800l.h>
+#include &lt;SoftwareSerial.h> 
+Sim800l Sim800l;  //declare the library
+char* text;
+char* number;
+bool error; 
 
+
+void setup(){
+	Sim800l.begin();
+	text="Testing Sms";
+	number="+542926556644";
+	error=Sim800l.sendSms(number,text);
+	// OR 
+	//error=Sim800l.sendSms("+540111111111","the text go here");
+}
+
+void loop(){
+	//do nothing
+}
+          </pre>
+          
+          </br>         
+        <h3>-How to read Sms with the library?</h3>
+          <pre style="boder:10px black;color:#4969a9">
+#include <Sim800l.h>
+#include &lt;SoftwareSerial.h> 
+Sim800l Sim800l;  
+String text;     
+uint8_t index;  
+
+
+void setup(){
+	Serial.begin(9600);          // only for debug the results . 
+	Sim800l.begin();             // initializate the library. 
+	index=1;                     // first position in the prefered memory storage. 
+	text=Sim800l.readSms(index);   	
+	Serial.println(text);
+
+}
+
+void loop(){
+	//do nothing
+}
+          
+          </pre>
+
+          
 		<h3>Installation</h3>
 
 		<ol>
