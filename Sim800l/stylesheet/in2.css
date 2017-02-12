@@ -1,0 +1,21 @@
+#headerWrapper{
+    height: 200px;
+    background-color: #00979C;
+}
+#headerInner{
+    margin-top: 20px;
+    height: 100%;
+    color: #ffffff;
+    font-size: 2em;
+}
+#viewGit{
+    box-shadow: 4px 6px 6px #00adb2;
+    padding: 7px;
+    text-decoration: none;
+    font-size: 0.7em;
+    color: #ffffff;
+    cursor: hand;
+
+}
+#viewGit:hover{
+}
