@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset='utf-8' http-equiv="X-UA-Compatible" content="chrome=1"/>
+    <meta name="description" content="library Sim800l, Example code, how to send sms, how to call, Sim800l, Sim900l,  Arduino Library, examples , code, sms, libreria, llamada, Author:Cristian Steib" />
+    <script type="application/ld+json">
+      {  "@context" : "http://schema.org",
+         "@type" : "WebSite",
+         "name" : "Sim800l Sim900l library",
+         "alternateName" : "Sim800l",
+         "url" : "http://cristiansteib.github.io/Sim800l/"
+      }
+    </script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet/stylesheet.css">
+    <title>Sim800l Sim900l Arduino library</title>
+</head>
+
+
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=1036414459780223";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+    <header class="inner">
+        <a id="forkme_banner" href="https://github.com/cristiansteib/Sim800l">View on GitHub</a>
+        <h1 id="project_title">GSM Sim800l</h1>
+        <h2 id="project_tagline">A library for Arduino</h2>
+        <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/cristiansteib/Sim800l/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/cristiansteib/Sim800l/tarball/master">Download this project as a tar.gz file</a>
+        </section>
+    </header>
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+
+        <div class="fb-like" data-href="https://cristiansteib.github.io/Sim800l/" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+        </br>
+        </br>
+        <h1>GSM Sim800l Arduino Library</h1>
+        <h5>This is a library for Arduino</h5>
+        <p>Copyright (c) 2016 Cristian Steib<br>
+            <a href="mailto:steibkhriz@gmail.com?Subject=Sim800l%20Library" target="_top">steibkhriz@gmail.com</a></p>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="background:white;">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="DDN5RAK2NPTGE">
+            <input type="image" src="https://www.paypalobjects.com/es_XC/AR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <!--<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1"> -->
+        </form>
+
+        <h3>Website</h3>
+        <p>GitHub Page (<a href="http://cristiansteib.github.io/Sim800l/">http://cristiansteib.github.io/Sim800l/</a>)</p>
+        <p>GitHub (<a href="https://github.com/cristiansteib/Sim800l">https://github.com/cristiansteib/Sim800l</a>)</p>
+
+
+        <h3>-How to send Sms with the library?</h3>
+        <pre style="boder:10px black;color:#4969a9">
+#include &lt;Sim800l.h>
+#include &lt;SoftwareSerial.h>
+Sim800l Sim800l;  //declare the library
+char* text;
+char* number;
+bool error;
+
+
+void setup(){
+	Sim800l.begin();
+	text="Testing Sms";
+	number="+542926556644";
+	error=Sim800l.sendSms(number,text);
+	// OR
+	//error=Sim800l.sendSms("+540111111111","the text go here");
+}
+
+void loop(){
+	//do nothing
+}
+          </pre>
+
+        </br>
+        <h3>-How to read Sms with the library?</h3>
+        <pre style="boder:10px black;color:#4969a9">
+#include <Sim800l.h>
+#include &lt;SoftwareSerial.h>
+Sim800l Sim800l;
+String text;
+uint8_t index;
+
+
+void setup(){
+	Serial.begin(9600);          // only for debug the results .
+	Sim800l.begin();             // initializate the library.
+	index=1;                     // first position in the prefered memory storage.
+	text=Sim800l.readSms(index);
+	Serial.println(text);
+
+}
+
+void loop(){
+	//do nothing
+}
+
+          </pre>
+
+
+        <h3>Installation</h3>
+
+        <ol>
+            <li>Download the library from the website.</li>
+            <li>Extract the <strong>Sim800l</strong> file, then rename the folder to Sim800l. </li>
+            <li>Move the Sim800l folder to your sketch folder, /libraries/ .. or go to the Arduino IDE, select Sketch>>Import Library>>add library... restart the IDE. </li>
+        </ol>
+
+
+
+
+        <h3>AT commands and reference</h3>
+        <p> If you are interested to see more details about the module you can read the Manual.</p>
+        <p> AT Command Manual (<a href="http://cristiansteib.github.io/Sim800l/info/SIM800+Series_AT+Command+Manual_V1.09.pdf">PDF File</a></p>
+
+        <h3>How to use??</h3>
+        <p> First of all you need to know some things.<br>
+            -As the module use 3.8v to 4.2v, you would be needing a voltage regulator to make sure you are not overtaking the voltage, or the module will be damaged.<br>
+            -The pinout shown in Imag 1.<br>
+            -The reset pin must be connected to transistor NPN wich is attached to Arduino, in the imag 1 shown an example of the circuit.<br>
+            -Be sure that gnd is common with arduino, this is the most common issue when not respond as expected.<br>
+        </p>
+
+
+        <section id="esp_italic" class="inner">
+
+
+            <h5>Imag 1:</h5>
+            <img src="images/diagram.png" alt="image circuit " >
+            <h5>Imag 2:</h5>
+            <img src="images/sim800l.png" alt="image module ">
+
+        </section>
+
+        <div class="fb-comments" data-href="https://cristiansteib.github.io/Sim800l/" data-numposts="5" data-order-by="social"></div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- FOOTER  -->
+<div id="footer_wrap" class="outer">
+    <footer class="inner">
+        <p class="copyright">Sim800l library and WebSite maintained by <a href="https://github.com/cristiansteib">Cristian Steib</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+    </footer>
+</div>
+
+
+
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-77150577-1");
+        pageTracker._trackPageview();
+    } catch(err) {}
+</script>
+
+</body>
+
+</html>
