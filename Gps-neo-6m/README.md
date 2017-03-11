@@ -1,2 +1,0 @@
-# cristiansteib.github.io
-x
