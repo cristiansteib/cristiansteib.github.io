@@ -1,6 +1,6 @@
 #headerWrapper{
     height: 200px;
-    background-color: #00979C;
+    background-color: #234e9c;
 }
 #headerInner{
     margin-top: 20px;
@@ -10,22 +10,23 @@
 }
 #viewGit{
     margin-bottom: 40px;
-    background-color: #00b2b7;
+    background-color: rgba(21, 92, 179, 0.71);
     padding: 5px 10px 10px 5px;
     text-decoration: none;
     font-size: 0.7em;
     color: #ffffff;
     cursor: hand;
+    border: 1px solid;
 }
 .footer{
-    background-color: #00979C;
+    background-color: #234e9c;
 }
 
 footer{
     margin-top: 30px;
     font-size: 15px;
     padding: 30px;
-    background-color: #00979C;
+    background-color: #234e9c;
     color: #ffffff;
 }
 
@@ -41,4 +42,9 @@ h3{
     margin-top: 40px;
 }
 
-
+.active a{
+    color: #1fcc7c!important;
+}
+.navbarcris{
+    border-radius: 0px;
+}
