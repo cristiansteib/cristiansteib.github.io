@@ -1,0 +1,45 @@
+#headerWrapper{
+    height: 200px;
+    background-color: #234e9c;
+}
+#headerInner{
+    margin-top: 20px;
+    height: 100%;
+    color: #ffffff;
+    font-size: 2em;
+}
+#viewGit{
+    margin-bottom: 40px;
+    background-color: rgba(21, 92, 179, 0.71);
+    padding: 5px 10px 10px 5px;
+    text-decoration: none;
+    font-size: 0.7em;
+    color: #ffffff;
+    cursor: hand;
+    border: 1px solid;
+}
+.footer{
+    background-color: #234e9c;
+}
+
+footer{
+    margin-top: 30px;
+    font-size: 15px;
+    padding: 30px;
+    background-color: #234e9c;
+    color: #ffffff;
+}
+
+footer a{
+    color: #f3f3f3;
+}
+
+h3{
+    color:#E67E22;
+}
+
+.margin-top{
+    margin-top: 40px;
+}
+
+
