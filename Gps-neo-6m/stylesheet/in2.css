@@ -42,4 +42,9 @@ h3{
     margin-top: 40px;
 }
 
-
+.active a{
+    color: #1fcc7c!important;
+}
+.navbarcris{
+    border-radius: 0px;
+}
