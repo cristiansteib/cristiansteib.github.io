@@ -71,3 +71,10 @@ h3{
     z-index: -500;
     position: absolute;
 }
+
+.contact_info{
+    text-align: center;
+}
+.separation{
+    margin-top: 30px;
+}
