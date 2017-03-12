@@ -75,6 +75,10 @@ h3{
 .contact_info{
     text-align: center;
 }
+.contact_info a{
+    text-decoration: none;
+    color: #292928;
+}
 .separation{
     margin-top: 30px;
 }
