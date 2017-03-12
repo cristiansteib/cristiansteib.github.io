@@ -56,9 +56,9 @@ h3{
 .navbarcris{
     border-radius: 0px;
 }
-/* ---- particles.js container ---- */
-index{
-    background-color: #00979C33;
+
+.index{
+    background-color: #2a363c;
 }
 #particles-js{
     width: 100%;
