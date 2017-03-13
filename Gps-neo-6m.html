@@ -132,7 +132,7 @@
 
             </tbody>
         </table></div></div>
-        
+
         <div class="col-lg-8"><div class="table-responsive"><table class="table table-striped">
             <thead>
                 <th>Methods</th>
@@ -242,16 +242,77 @@ void loop()
     Serial.println(longitudMeridiano);
 }
 
-    </code></pre>
-
-
-    </div></div>
+    </code></pre></div></div>
 
 
 
+<section id="googleGPS">
+    <div class="row"><div class="container">
+        <div class="row margin-top" ><div class="container">
+            <h3>-The Google link Method</h3>
+            <p style="margin-left: 20px">This method provides a link to see the place on Google Maps.<br>
+                Is very easy to use, only need to call the function with the parameter.</p>
+
+        </div></div>
+
+        <div class="col-lg-6">
+            <h4>Code:</h4>
+                    <pre><code class="c">
+#include &lt;SoftwareSerial.h>
+#include &lt;Gpsneo.h>
+
+Gpsneo gps;
+/*warning is too important that the
+size of array don't be minor than they need!
+ */
+char link[60];
+
+void  setup()
+{
+    Serial.begin(9600);
+}
+
+void loop()
+{
+    gps.Google(link);
+
+}</code></pre>
+
+        </div>
+        <div class="col-lg-6">
+            <h4>Output:</h4>
+                    <pre><code class="c++">
+Serial Port Output:
+
+http://www.google.com/maps/place/-34.9140170,-57.9377400
+http://www.google.com/maps/place/-34.9140240,-57.9376560
+http://www.google.com/maps/place/-34.9140240,-57.9376560
+http://www.google.com/maps/place/-34.9140240,-57.9375800
+http://www.google.com/maps/place/-34.9139980,-57.9376300
+http://www.google.com/maps/place/-34.9139980,-57.9376300
+...
+...
+...
+
+
+
+
+
+
+
+ </code></pre>
 
 </div>
 
+
+        <p style="margin-left: 20px">The function is responsible for performing all the actions necessary to obtain the link. It must be taken into account that the realization
+
+            of the reading weft, the obtained data corresponds to the protocol NMEA, so the latitud comes in the format ddmm.mmmmm, what is dd°mm'mmmm'', and for longitude
+            in dddmm.mmm, therefore it is converted to dd.ddddd for Google Maps to understand this. The convertion of these units is obtained from another method of the library.</p>
+    </div>
+    </div>
+</section>
+</div>
 <!-- FOOTER  -->
 <footer class="gpsneo">
     <div class="row "><div class="container">
