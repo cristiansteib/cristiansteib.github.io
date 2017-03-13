@@ -103,11 +103,6 @@
         <p>
             The library arises from the need to simplify the use of the module, using the NMEA standart.<br>
             It does not generate excess memory consumption, it is implemented with own functions to handle the pointers of the buffers.
-           <br>
-
-
-
-
         </p>
 
 
@@ -163,8 +158,38 @@
         </table></div></div>
 
     </div></div>
+<section id="GPRMC">
+    <div class="row margin-top">
+        <div class="container">
+            <h3>- How to get data with getDataGPRMC() </h3>
+            <div class="col-lg-9">
+                <p style="margin-left: 20px">
+                    <span style="color:#000fff;">$GPRMC</span> - Recommended minimum specific GPS/Transit data<br>
+                    an example of a  normal sentence:
+                    <ul>
+                       <li>$GPRMC,081836,A,3751.65,S,14507.36,E,000.0,360.0,130998,011.3,E*62</li>
+                        <li>$GPRMC,225446,A,4916.45,N,12311.12,W,000.5,054.7,191194,020.3,E*68</li>
+                    </ul>
+                    <ul style="list-style-type:none">
+                        <li> 225446       Time of fix 22:54:46 UTC                         </li>
+                        <li> A            Navigation receiver warning (A = OK, V = warning) </li>
+                        <li> 4916.45,N    Latitude 49 deg. 16.45 min North = 49°16'45''    </li>
+                        <li> 12311.12,W   Longitude 123 deg. 11.12 min West  = 123°11'12'' </li>
+                        <li> 000.5        Speed over ground, Knots                         </li>
+                        <li> 054.7        Course Made Good, True                           </li>
+                        <li> 191194       Date of fix  19 November 1994                    </li>
+                        <li> 020.3,E      Magnetic variation 20.3 deg East                 </li>
+                        <li> *68          mandatory checksum                               </li>
+                    </ul>
+                <p>Info:</p>
+                The knot (kn) is a unit of speed equal to one nautical mile (1.852 km) per hour, approximately 1.151 mph.<br>
+                The checksum field consists of a '*' and two hex digits representing an 8 bit exclusive OR of all characters between, but not including, the '$' and '*'.
 
-    <div class="row margin-top"><div class="container"><h3>-How to get data?</h3></div></div>
+
+                </p>
+            </div>
+        </div>
+    </div>
     <div class="row"><div class="container">
         <pre><code class="c">
 
@@ -247,9 +272,8 @@ void loop()
 }
 
     </code></pre></div></div>
-
-
-
+</section>
+    
 <section id="googleGPS">
     <div class="row"><div class="container">
         <div class="row margin-top" ><div class="container">
@@ -312,7 +336,7 @@ http://www.google.com/maps/place/-34.9139980,-57.9376300
         <p style="margin-left: 20px">The function is responsible for performing all the actions necessary to obtain the link.
             It must be taken into account that the realization of the reading weft, the obtained data corresponds
             to the protocol NMEA, so the latitud comes in the format ddmm.mmmmm, what is dd°mm'mmmm'', and for
-            longitude in dddmm.mmm, therefore it is converted to dd.ddddd for Google Maps to understand this.
+            longitude in dddmm.mmm,  ddd°mm'mmm'' therefore it is converted to dd.ddddd for Google Maps to understand this.
             The convertion of these units is obtained from another method of the library.</p>
         </div>
     </div>
