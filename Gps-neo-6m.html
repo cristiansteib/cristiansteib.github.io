@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Gps-neo-6m Library Arduino</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -63,8 +64,8 @@
     </div>
 </nav>
 
-<body>
-<div class="container-fluid margin-top">
+<body >
+<div class="container-fluid margin-top text-style" style="font-family: 'Open Sans Condensed', sans-serif;font-size:22px " >
     <div class="row ">
         <div class="container">
             <div class="col-lg-6">
@@ -111,7 +112,7 @@
     </div></div>
 
     <div class="row"><div class="container">
-        <div class="col-lg-8"><div class="table-responsive"><table class="table table-striped">
+        <div class="col-lg-10 margin-top"><div class="table-responsive"><table class="table table-striped">
             <thead>
                 <th>CONSTRUCTORS</th>
                 <th>Notes</th>
@@ -133,7 +134,7 @@
             </tbody>
         </table></div></div>
 
-        <div class="col-lg-8"><div class="table-responsive"><table class="table table-striped">
+        <div class="col-lg-10 margin-top"><div class="table-responsive"><table class="table table-striped">
             <thead>
                 <th>Methods</th>
                 <th>Notes</th>
@@ -305,10 +306,11 @@ http://www.google.com/maps/place/-34.9139980,-57.9376300
 </div>
 
 
-        <p style="margin-left: 20px">The function is responsible for performing all the actions necessary to obtain the link. It must be taken into account that the realization
-
-            of the reading weft, the obtained data corresponds to the protocol NMEA, so the latitud comes in the format ddmm.mmmmm, what is dd°mm'mmmm'', and for longitude
-            in dddmm.mmm, therefore it is converted to dd.ddddd for Google Maps to understand this. The convertion of these units is obtained from another method of the library.</p>
+        <p style="margin-left: 20px">The function is responsible for performing all the actions necessary to obtain the link.<br>
+            It must be taken into account that the realization of the reading weft, the obtained data corresponds<br>
+            to the protocol NMEA, so the latitud comes in the format ddmm.mmmmm, what is dd°mm'mmmm'', and for<br>
+            longitude in dddmm.mmm, therefore it is converted to dd.ddddd for Google Maps to understand this.<br>
+            The convertion of these units is obtained from another method of the library.</p>
     </div>
     </div>
 </section>
