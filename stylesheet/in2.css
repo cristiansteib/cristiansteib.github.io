@@ -1,4 +1,6 @@
-
+body{
+    min-height:100%;
+}
 #headerWrapper{
     height: 200px;
 }
@@ -39,7 +41,12 @@ footer{
     color: #ffffff;
     bottom: 0px;
     width: 100%;
-   position: absolute;
+
+    clear: both;
+    position: relative;
+    z-index: 10;
+    #height: 3em;
+
 }
 
 footer a{
