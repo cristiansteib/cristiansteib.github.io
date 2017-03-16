@@ -37,6 +37,8 @@ footer{
     font-size: 15px;
     padding: 30px;
     color: #ffffff;
+    bottom: 0px;
+    width: 100%;
 }
 
 footer a{
